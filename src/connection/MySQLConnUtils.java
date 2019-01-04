@@ -17,17 +17,16 @@ public class MySQLConnUtils {
 	  
 	 public static Connection getMySQLConnection(String hostName, String dbName,
 	         String userName, String password) throws SQLException,
-	         ClassNotFoundException {
-	    
+	         ClassNotFoundException {	    
 	     Class.forName("com.mysql.jdbc.Driver");
 	  
 	     // Cấu trúc URL Connection đối với MySQL:
 	     // Ví dụ: 
 	     // jdbc:mysql://localhost:3306/simplehr
-	     String connectionURL = "jdbc:mysql://" + hostName + ":3306/" + dbName;
-	  
+	     String connectionURL = "jdbc:mysql://" + hostName + ":3306/" + dbName;	  
 	     Connection conn = DriverManager.getConnection(connectionURL, userName,
 	             password);
+	     System.out.println("Connecting ... ");
 	     return conn;
 	 }
 }
